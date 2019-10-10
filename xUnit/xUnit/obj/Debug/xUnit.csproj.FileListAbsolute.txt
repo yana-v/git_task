@@ -1,7 +1,0 @@
-D:\Тестирование ПО\xUnit\xUnit\bin\Debug\xUnit.exe.config
-D:\Тестирование ПО\xUnit\xUnit\bin\Debug\xUnit.exe
-D:\Тестирование ПО\xUnit\xUnit\bin\Debug\xUnit.pdb
-D:\Тестирование ПО\xUnit\xUnit\obj\Debug\xUnit.csprojAssemblyReference.cache
-D:\Тестирование ПО\xUnit\xUnit\obj\Debug\xUnit.csproj.CoreCompileInputs.cache
-D:\Тестирование ПО\xUnit\xUnit\obj\Debug\xUnit.exe
-D:\Тестирование ПО\xUnit\xUnit\obj\Debug\xUnit.pdb
