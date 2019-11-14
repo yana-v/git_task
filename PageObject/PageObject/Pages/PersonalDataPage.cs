@@ -11,7 +11,7 @@ namespace PageObject.Pages
         private IWebElement continueButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//DIV[@class='arcticmodal error-modal']")]
-        public IWebElement errorForm { get; set; }
+        private IWebElement errorForm { get; set; }
 
         public PersonalDataPage(IWebDriver browser)
         {

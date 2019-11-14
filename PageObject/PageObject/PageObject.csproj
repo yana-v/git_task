@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Pages\BeginningPage.cs" />
     <Compile Include="Pages\PersonalDataPage.cs" />
-    <Compile Include="Pages\TypeOfWagonSelectionPage.cs" />
+    <Compile Include="Pages\WagonAndPlaceSelectionPage.cs" />
     <Compile Include="Pages\TrainSelectionPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -66,7 +66,7 @@ namespace RussianRailwayTests
                 .ClickSearchingButton();
             TrainSelectionPage trainSelectionPage = new TrainSelectionPage(webDriver)
                 .ClickSelectingTrainButton(webDriver);
-            TypeOfWagonSelectionPage typeOfWagonSelectionPage = new TypeOfWagonSelectionPage(webDriver)
+            WagonAndPlaceSelectionPage typeOfWagonSelectionPage = new WagonAndPlaceSelectionPage(webDriver)
                 .ClickSelectingTypeOfWagonButton(webDriver)
                 .ClickSelectingPlacesButton()
                 .ClickContinueButton();

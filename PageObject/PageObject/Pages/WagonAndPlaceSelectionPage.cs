@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace PageObject.Pages
 {
-    public class TypeOfWagonSelectionPage
+    public class WagonAndPlaceSelectionPage
     {
         [FindsBy(How = How.XPath, Using = "//SPAN[@class='car-type__btn car-type__btn--select button button--border'][1]")]
         private IWebElement selectingTypeOfWagonButton { get; set; }
@@ -14,13 +14,13 @@ namespace PageObject.Pages
         [FindsBy(How = How.XPath, Using = "//BUTTON[contains(@id,'zabronirovat_')]")]
         private IWebElement continueButton { get; set; }
 
-        public TypeOfWagonSelectionPage (IWebDriver browser)
+        public WagonAndPlaceSelectionPage (IWebDriver browser)
         {
             PageFactory.InitElements(browser, this);
         }
 
 
-        public TypeOfWagonSelectionPage ClickSelectingTypeOfWagonButton(IWebDriver browser)
+        public WagonAndPlaceSelectionPage ClickSelectingTypeOfWagonButton(IWebDriver browser)
         {
             new WebDriverWait(browser, TimeSpan.FromSeconds(10))
                 .Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//SPAN[@class='car-type__btn car-type__btn--select button button--border'][1]")));
@@ -28,13 +28,13 @@ namespace PageObject.Pages
             return this;
         }
 
-        public TypeOfWagonSelectionPage ClickSelectingPlacesButton()
+        public WagonAndPlaceSelectionPage ClickSelectingPlacesButton()
         {
             selectingPlacesButton.Click();
             return this;
         }
 
-        public TypeOfWagonSelectionPage ClickContinueButton()
+        public WagonAndPlaceSelectionPage ClickContinueButton()
         {
             continueButton.Click();
             return this;
