@@ -47,10 +47,10 @@ namespace GitHubAutomation.Pages
         {
             entranceButton.Click();
             WaitUtils.Time = 10;
-            //WaitUtils.Way = "//li[text()='Номер заказа слишком короткий (Минимум: 14 симв.).\r\n" +
-            //                                "Необходимо заполнить поле Телефон или Email».\r\n" +
-            //                                "Телефон или Email слишком короткий(Минимум: 6 симв.).']";
-            //WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
+            WaitUtils.Way = "//li[text()='Номер заказа слишком короткий (Минимум: 14 симв.).\r\n" +
+                                            "Необходимо заполнить поле Телефон или Email».\r\n" +
+                                            "Телефон или Email слишком короткий(Минимум: 6 симв.).']";
+            WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
             return this;
         }
 
