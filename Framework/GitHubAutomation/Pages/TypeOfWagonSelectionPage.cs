@@ -10,8 +10,8 @@ namespace GitHubAutomation.Pages
     {
         [FindsBy(How = How.XPath, Using = "//SPAN[@class='car-type__btn car-type__btn--select button button--border'][1]")]
         private IWebElement selectingTypeOfWagonButton { get; set; }
-        [FindsBy(How = How.XPath, Using = "//SPAN[contains(@class,'hint--top') or contains(@class,'hint--bottom') or contains(@class,'place-number')][1] ")]
-        private IWebElement selectingPlacesButton { get; set; }
+        [FindsBy(How = How.XPath, Using = "//SPAN[contains(@class,'place place') and not(contains(@class,'notavailable'))][1]")]
+        public IWebElement selectingPlacesButton { get; set; }
         [FindsBy(How = How.XPath, Using = "//BUTTON[contains(@id,'zabronirovat_')]")]
         private IWebElement continueButton { get; set; }
 
@@ -30,8 +30,7 @@ namespace GitHubAutomation.Pages
             return this;
         }
 
-
-
+        
         public TypeOfWagonSelectionPage ClickSelectingPlacesButton()
         {
             selectingPlacesButton.Click();

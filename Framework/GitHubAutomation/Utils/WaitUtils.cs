@@ -2,8 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
-
 namespace GitHubAutomation.Utils
 {
     class WaitUtils
@@ -27,6 +25,12 @@ namespace GitHubAutomation.Utils
         {
             new WebDriverWait(browser, TimeSpan.FromSeconds(time))
                .Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Name(way)));
+        }
+
+        public static void WaitFourteenMinutes(IWebDriver browser )
+        {
+            new WebDriverWait(browser, TimeSpan.FromMinutes(15))
+               .Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//DIV[@class='step-four-title timer error']/h1")));
         }
 
     }

@@ -18,9 +18,7 @@ namespace GitHubAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = "//li[text()='Заказа с таким номером не существует']")]
         public IWebElement errorFormOrderNumber { get; set; }
-        [FindsBy(How = How.XPath, Using = "//DIV[@class='arcticmodal-block'][text()='Номер заказа слишком короткий (Минимум: 14 симв.).\r\n" +
-                                            "Необходимо заполнить поле \"Телефон или Email\".\r\n" +
-                                            "Телефон или Email слишком короткий(Минимум: 6 симв.).']")]
+        [FindsBy(How = How.XPath, Using = "//DIV[@class='arcticmodal-block']")]
         public IWebElement errorFormWithEmptyFields { get; set; }
 
         public ControlOredersPage(IWebDriver browser)
@@ -47,9 +45,7 @@ namespace GitHubAutomation.Pages
         {
             entranceButton.Click();
             WaitUtils.Time = 10;
-            WaitUtils.Way = "//li[text()='Номер заказа слишком короткий (Минимум: 14 симв.).\r\n" +
-                                            "Необходимо заполнить поле Телефон или Email».\r\n" +
-                                            "Телефон или Email слишком короткий(Минимум: 6 симв.).']";
+            WaitUtils.Way = "//DIV[@class='arcticmodal-block']";
             WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
             return this;
         }

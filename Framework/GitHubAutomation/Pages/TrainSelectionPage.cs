@@ -18,7 +18,7 @@ namespace GitHubAutomation.Pages
 
         public TrainSelectionPage ClickSelectingTrainButton(IWebDriver browser)
         {
-            WaitUtils.Time = 30;
+            WaitUtils.Time = 60;
             WaitUtils.Way = "select_train";
             WaitUtils.WaitElementForUsingId(browser, WaitUtils.Way, WaitUtils.Time);
             selectingTrainButton.Click();

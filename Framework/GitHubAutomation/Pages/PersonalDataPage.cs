@@ -45,23 +45,43 @@ namespace GitHubAutomation.Pages
         [FindsBy(How = How.Id, Using = "CustomerForm_mail")]
         public IWebElement emailInput { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//SPAN[@class='check-icon'][3]")]
-        public IWebElement AgreementWithConditionsCheckbox { get; set; }
+        [FindsBy(How = How.XPath, Using = "//DIV[@class='check']/span[@class='check-icon']")]
+        public IWebElement agreementWithConditionsCheckbox { get; set; }
 
+        [FindsBy(How = How.Id, Using = "CustomerForm[isAgree]")]
+        public IWebElement phoneCheckboxForSelectedCheck { get; set; }
+        
 
         public PersonalDataPage(IWebDriver browser)
         {
             PageFactory.InitElements(browser, this);
         }
 
+        public PersonalDataPage ClearAllFields()
+        {
+            surnameInput.Clear();
+            nameInput.Clear();
+            patronymicInput.Clear();
+            numberDocumentInput.Clear();
+            birthdayInput.Clear();
+            if (phoneCheckbox.Selected)
+                ClickPhoneCheckbox();
+            return this;
+        } 
         public PersonalDataPage ClickContinueButton(IWebDriver browser)
         {
-            WaitUtils.Time = 30;
+            WaitUtils.Time = 60;
             WaitUtils.Way = "//BUTTON[@class='button button--blue']";
             WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
             continueButton.Click();
             WaitUtils.Way = "//DIV[@class='arcticmodal error-modal']";
             WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
+            return this;
+        }
+
+        public PersonalDataPage ClickContinueButtonWithoutWaiting()
+        {
+            continueButton.Click();
             return this;
         }
 
@@ -101,6 +121,7 @@ namespace GitHubAutomation.Pages
 
         public PersonalDataPage InputBirthday(User user)
         {
+            birthdayInput.Click();
             birthdayInput.SendKeys(user.Birthday);
             return this;
         }
@@ -117,9 +138,15 @@ namespace GitHubAutomation.Pages
             return this;
         }
 
+        public PersonalDataPage InputEmail(User user)
+        {
+            emailInput.SendKeys(user.Email);
+            return this;
+        }
+
         public PersonalDataPage ClickAgreementConditionsCheckbox()
         {
-            AgreementWithConditionsCheckbox.Click();
+            agreementWithConditionsCheckbox.Click();
             return this;
         }
 

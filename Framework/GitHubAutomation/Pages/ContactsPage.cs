@@ -10,10 +10,10 @@ namespace GitHubAutomation.Pages
 {
     class ContactsPage
     {
-        [FindsBy(How = How.XPath, Using = "input//[@class='btVer3']")]
+        [FindsBy(How = How.XPath, Using = "//INPUT[@class='btVer3']")]
         private IWebElement sendQuastionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "LABEL//[text()= 'Это поле обязательно для заполнения']")]
+        [FindsBy(How = How.XPath, Using = "//LABEL[text()='Это поле обязательно для заполнения.'][1]")]
         public IWebElement errorMessage { get; set; }
 
         public ContactsPage(IWebDriver browser)
@@ -24,11 +24,9 @@ namespace GitHubAutomation.Pages
         public ContactsPage ClickQuastionButton(IWebDriver browser)
         {
             WaitUtils.Time = 20;
-            WaitUtils.Way = "INPUT//[@class='btVer3']";
+            WaitUtils.Way = "//INPUT[@class='btVer3']";
             WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
             sendQuastionButton.Click();
-            WaitUtils.Way = "LABEL//[text()= 'Это поле обязательно для заполнения']";
-            WaitUtils.WaitElementForUsingXPath(browser, WaitUtils.Way, WaitUtils.Time);
             return this;
         }
 
